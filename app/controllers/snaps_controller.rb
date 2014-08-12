@@ -33,10 +33,10 @@ class SnapsController < ApplicationController
       session[:access_token] = response.access_token
       @access_token = session[:access_token]
       
+      @snaps = Snap.all
+      render "view"      
     end
 
-    @snaps = Snap.all
-    render "view"
   end
   
   def test
