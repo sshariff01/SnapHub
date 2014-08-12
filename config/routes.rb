@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   
   match 'oauth/connect', to: 'snaps#connect', via: :get
   match 'redirect/callback', to: 'snaps#callback', via: :get
+  match 'snaps/process_subscription', to: 'snaps#process_subscription', via: [:get, :post]
+
   
 
   # The priority is based upon order of creation: first created -> highest priority.
