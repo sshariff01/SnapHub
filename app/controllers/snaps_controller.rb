@@ -3,7 +3,7 @@ class SnapsController < ApplicationController
   
   # enable :sessions
   
-  CALLBACK_URL = "http://localhost:3000/redirect/callback"
+  CALLBACK_URL = "http://snaphub.herokuapp.com/redirect/callback"
   HASHTAG = "testphotographytag2014"
   
   Instagram.configure do |config|
