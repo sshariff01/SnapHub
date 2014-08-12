@@ -1,4 +1,7 @@
 class SnapsController < ApplicationController
+  protect_from_forgery :secret => 'any_phrase',  
+                       :except => :process_subscription
+                       
   require "instagram"
   
   # enable :sessions
