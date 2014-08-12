@@ -1,0 +1,35 @@
+<script type="text/javascript">
+	$(document).ready(function() {
+	    $('.slideshow').cycle({
+			fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+		});
+	});
+</script>
+
+<h1>Snaps#view</h1>
+<p>Find me in app/views/snaps/view.html.erb</p>
+
+<% if @access_token %>
+	<p>Access Token: <%= @access_token.inspect %></p>
+<% end %>
+
+<% if @snaps.empty? %>
+	<p>No pictures yet.. But check out these default images in action!</p>
+	<div class="slideshow">
+		<img src="http://malsup.github.com/images/beach1.jpg" width="200" height="200" />
+		<img src="http://malsup.github.com/images/beach2.jpg" width="200" height="200" />
+		<img src="http://malsup.github.com/images/beach3.jpg" width="200" height="200" />
+		<img src="http://malsup.github.com/images/beach4.jpg" width="200" height="200" />
+		<img src="http://malsup.github.com/images/beach5.jpg" width="200" height="200" />
+	</div>
+<% else %>
+	<div class="slideshow">
+		<% @snaps.each do |s| %>
+			<img src=<%= s.img_url %> width="200" height="200" />
+		<% end %>
+	</div>
+<% end %>
+
+<br />
+
+<!-- <%#= link_to "Add Image", controller: "snaps", action: "new" %> -->

@@ -13,7 +13,7 @@ class SnapsController < ApplicationController
   end
   
   def index
-    if session[:access_token]
+    if defined? session[:access_token]
       @access_token = session[:access_token]
     end
   end
@@ -25,7 +25,22 @@ class SnapsController < ApplicationController
   def callback
     response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
     session[:access_token] = response.access_token
-    # @access_token = response.access_token
-    render "index"
+    @access_token = session[:access_token]
+    @snaps = Snap.all
+    render "view"
+  end
+  
+  def test
+    if defined? session[:access_token]
+      @access_token = session[:access_token]
+    end
+  end
+  
+  def view
+    if defined? session[:access_token]
+      @access_token = session[:access_token]
+    end
+    
+    @snaps = Snap.all
   end
 end

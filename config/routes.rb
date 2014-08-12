@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'snaps/index'
+  get 'snaps/test'
+  get 'snaps/view'
   
   match 'oauth/connect', to: 'snaps#connect', via: :get
   match 'redirect/callback', to: 'snaps#callback', via: :get
