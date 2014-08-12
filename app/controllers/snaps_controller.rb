@@ -53,4 +53,10 @@ class SnapsController < ApplicationController
     
     @snaps = Snap.all
   end
+  
+  def subscribe
+    Instagram.create_subscription({object: "tag", callback_url: CALLBACK_URL, aspect: "media", object_id: HASHTAG})
+    
+    redirect_to "view"
+  end
 end
