@@ -62,7 +62,7 @@ class SnapsController < ApplicationController
       t.exit
     end
     
-    redirect_to "view"
+    redirect_to "/snaps/view"
   end
   
   def process_subscription
