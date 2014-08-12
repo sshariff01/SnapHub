@@ -68,6 +68,9 @@ class SnapsController < ApplicationController
   def process_subscription
     if params["hub.challenge"]
       render :text => params["hub.challenge"]
-    end   
+    else
+      @snap = Snap.new(:img_url => params[:_json])
+      @snap.save
+    end
   end
 end
