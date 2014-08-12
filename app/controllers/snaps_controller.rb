@@ -68,6 +68,6 @@ class SnapsController < ApplicationController
   def process_subscription
     if params["hub.challenge"]
       render :text => params["hub.challenge"]
-    else   
+    end   
   end
 end
