@@ -46,6 +46,7 @@ class SnapsController < ApplicationController
   end
   
   def view
+    @subscriptions = Instagram.subscriptions
     if defined? session[:access_token]
       @access_token = session[:access_token]
     end
