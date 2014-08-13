@@ -42,4 +42,5 @@ gem 'spring',        group: :development
 gem 'instagram'
 
 gem 'twitter'
+gem 'delayed_job_active_record'
 
