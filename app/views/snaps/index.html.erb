@@ -3,7 +3,7 @@
 
 <p><a href="/oauth/connect">Connect with Instagram</a></p>
 
-<p><%= link_to "Make a Tweet!", controller: "twitter", action: "user_tweet" %></p>
+<p><%= link_to "Make a Tweet!", controller: "twitter", action: "search_tag" %></p>
 
 <% if @access_token %>
 	<p><%= @access_token.inspect %></p>
