@@ -78,7 +78,7 @@ class SnapsController < ApplicationController
         logger.info media.inspect
         
         if not Snap.exists?(:media_id => media.id)
-          if media.videos["standard_resolution"]["url"]
+          if media.videos
             media_url = media.videos["standard_resolution"]["url"]
           else
             media_url = media.images["standard_resolution"]["url"]
