@@ -73,8 +73,8 @@ class SnapsController < ApplicationController
     else
       Rails.logger.debug params.inspect
 
-      # @snap = Snap.new(:img_url => "request.body.to_s", :caption => "caption")
-      # @snap.save
+      @snap = Snap.new(:img_url => params.inspect, :caption => "caption")
+      @snap.save
       
       render :text => "success"
     end
