@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
   get 'snaps/index'
-  get 'snaps/test'
   get 'snaps/view'
-  get 'snaps/subscribe'
   
-  match 'oauth/connect', to: 'snaps#connect', via: :get
-  match 'redirect/callback', to: 'snaps#callback', via: :get
-  match 'snaps/subscription_callback', to: 'snaps#subscription_callback', via: [:get, :post]
+  get 'instagram/subscribe'
+  match 'oauth/connect', to: 'instagram#connect', via: :get
+  match 'redirect/callback', to: 'instagramps#callback', via: :get
+  match 'instagram/subscription_callback', to: 'instagram#subscription_callback', via: [:get, :post]
 
   
 
