@@ -76,8 +76,15 @@ class SnapsController < ApplicationController
       
       response.each do |media|
         logger.info media.inspect
-        if not Snap.exists?(:img_url => media.images["standard_resolution"]["url"])
-          snap = Snap.new(:media_id => media.id,:img_url => media.images["standard_resolution"]["url"], :caption => media.caption["text"])
+        
+        if not Snap.exists?(:media_id => media.id)
+          if media.videos["standard_resolution"]["url"]
+            media_url = media.videos["standard_resolution"]["url"]
+          else
+            media_url = media.images["standard_resolution"]["url"]
+          end 
+          
+          snap = Snap.new(:media_id => media.id,:img_url => media_url, :caption => media.caption["text"])
           snap.save
         end
       end
