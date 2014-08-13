@@ -26,7 +26,7 @@ class TwitterController < ApplicationController
       # puts object.text if object.is_a?(Twitter::Tweet)
     # end
     
-    client_rest.search(:topic => topics.join(",")) do |object|
+    client_rest.search("testphotographytag2014", :result_type => "recent") do |object|
       puts object.text if object.is_a?(Twitter::Tweet)
     end
     
