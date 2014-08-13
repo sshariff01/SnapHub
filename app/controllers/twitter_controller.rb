@@ -21,9 +21,11 @@ class TwitterController < ApplicationController
     end
     
     topics = ["testphotographytag2014"]
-    client_stream.delay.filter(:track => topics.join(",")) do |object|
+    
+    client_stream.filter(:track => topics.join(",")) do |object|
       puts object.text if object.is_a?(Twitter::Tweet)
     end
+    
     render :text => "success"
   end
   
