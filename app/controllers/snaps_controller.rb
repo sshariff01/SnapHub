@@ -72,17 +72,15 @@ class SnapsController < ApplicationController
       render :text => params["hub.challenge"]
     else
       logger.info params.inspect
-
       response = Instagram.tag_recent_media(HASHTAG)
       
       response.each do |media|
         logger.info media.inspect
-        @snap = Snap.new(:img_url => media.images["standard_resolution"]["url"], :caption => "caption")
-        @snap.save
+        if not Snap.exists?(:img_url => media.images["standard_resolution"]["url"])
+          snap = Snap.new(:img_url => media.images["standard_resolution"]["url"], :caption => media.caption["text"])
+          snap.save
+        end
       end
-      
-      # @snap = Snap.new(:img_url => params.inspect, :caption => "caption")
-      # @snap.save
       
       render :text => "success"
     end
