@@ -30,7 +30,7 @@ class InstagramController < ApplicationController
         @access_token = session[:access_token]
       end
       @snaps = Snap.all
-      render "/snaps/view"      
+      render 'snaps/view'
     end
   end
   
@@ -41,7 +41,7 @@ class InstagramController < ApplicationController
       t.exit
     end
     
-    redirect_to "/snaps/view"
+    redirect_to 'snaps/view'
   end
   
   def subscription_callback
