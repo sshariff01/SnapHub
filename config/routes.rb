@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   get 'instagram/subscribe'
   match 'oauth/connect', to: 'instagram#connect', via: :get
-  match 'redirect/callback', to: 'instagramps#callback', via: :get
+  match 'redirect/callback', to: 'instagram#callback', via: :get
   match 'instagram/subscription_callback', to: 'instagram#subscription_callback', via: [:get, :post]
 
   
