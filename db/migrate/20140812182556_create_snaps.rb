@@ -4,7 +4,7 @@ class CreateSnaps < ActiveRecord::Migration
       t.string :media_id
       t.string :media_type
       t.string :media_url
-      t.string :caption, limit: 50
+      t.string :caption
 
       t.timestamps
     end
