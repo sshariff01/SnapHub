@@ -27,11 +27,11 @@ class TwitterController < ApplicationController
       # puts object.text if object.is_a?(Twitter::Tweet)
     # end
     
-    # client_rest.search("coffee", :result_type => "recent") do |object|
-      # puts 'START'
-      # puts object.text
-      # puts 'FINISH'
-    # end
+    client_rest.search("coffee", :result_type => "recent") do |object|
+      puts 'START'
+      puts object.text
+      puts 'FINISH'
+    end
     
     render :text => "success"
   end
