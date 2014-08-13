@@ -21,6 +21,7 @@ class TwitterController < ApplicationController
     client_rest.update("I'm tweeting with hashtag testphotographytag2014 #testphotographytag2014")
     Thread.new do |t|
       topics = ["testphotographytag2014"]
+      puts topics
       client_stream.filter(:track => topics.join(",")) do |object|
         puts object.text if object.is_a?(Twitter::Tweet)
       end
