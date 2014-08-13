@@ -4,7 +4,5 @@ require ::File.expand_path('../config/environment',  __FILE__)
 
 $stdout.sync = true
 
-config.logger = Logger.new(STDOUT)
-
 run Rails.application
 
