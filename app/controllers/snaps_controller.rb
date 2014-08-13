@@ -77,7 +77,7 @@ class SnapsController < ApplicationController
       
       response.each do |media|
         logger.info media.inspect
-        @snap = Snap.new(:img_url => media.id, :caption => "caption")
+        @snap = Snap.new(:img_url => media.images["standard_resolution"], :caption => "caption")
         @snap.save
       end
       
