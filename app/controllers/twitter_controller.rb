@@ -26,7 +26,8 @@ class TwitterController < ApplicationController
       end
       t.exit
     end
-    
+
+    @snaps = Snap.all
     render '/snaps/view'
   end
   
