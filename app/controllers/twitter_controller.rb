@@ -27,6 +27,7 @@ class TwitterController < ApplicationController
       t.exit
     end
     
+    render '/snaps/view'
   end
   
 end
