@@ -26,9 +26,6 @@ class TwitterController < ApplicationController
       puts object.text if object.is_a?(Twitter::Tweet)
     end
     
-    Snap.delay.send_to_twitter
-
-    @snaps = Snap.all
     render :text => "success"
   end
   
