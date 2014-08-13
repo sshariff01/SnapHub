@@ -28,8 +28,8 @@
 			<% if s.media_type == "image" %>
 				<img src=<%= s.media_url %> width="400" height="400" />
 			<% else %>
-				<video width="400" height="400" autoplay>
-				    <source src=<%= s.media_url %> type="video/mp4">
+				<video width="400" height="400" autoplay loop volume="0">
+				    <source id=<%= s.media_id %> src=<%= s.media_url %> type="video/mp4">
 				    Your browser does not support the video tag or the file format of this video.
 				</video>
 			<% end %>
