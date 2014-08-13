@@ -25,7 +25,7 @@
 <% else %>
 	<div class="slideshow">
 		<% @snaps.each do |s| %>
-			<% if s.type == "image" %>
+			<% if s.media_type == "image" %>
 				<img src=<%= s.media_url %> width="400" height="400" />
 			<% else %>
 				<video width="400" height="400" controls autoplay>
