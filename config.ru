@@ -2,7 +2,7 @@
 
 require ::File.expand_path('../config/environment',  __FILE__)
 
-stdout.sync = true
+$stdout.sync = true
 
 config.logger = Logger.new(STDOUT)
 
