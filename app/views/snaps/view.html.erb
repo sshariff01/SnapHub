@@ -25,10 +25,18 @@
 <% else %>
 	<div class="slideshow">
 		<% @snaps.each do |s| %>
-			<img src=<%= s.img_url %> width="200" height="200" />
+			<% if s.type == "image" %>
+				<img src=<%= s.media_url %> width="400" height="400" />
+			<% else %>
+				<video width="400" height="400" controls autoplay>
+				    <source src=<%= s.media_url %> type="video/mp4">
+				    Your browser does not support the video tag or the file format of this video.
+				</video>
+			<% end %>
 		<% end %>
 	</div>
 <% end %>
+
 
 <br />
 
