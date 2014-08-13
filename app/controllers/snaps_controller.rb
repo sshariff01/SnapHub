@@ -75,7 +75,11 @@ class SnapsController < ApplicationController
 
       response = Instagram.tag_recent_media(HASHTAG)
       
-      logger.info JSON.decode(response).inspect
+      response.each do |media|
+        logger.info media.inspect
+        @snap = Snap.new(:img_url => media.id, :caption => "caption")
+        @snap.save
+      end
       
       # @snap = Snap.new(:img_url => params.inspect, :caption => "caption")
       # @snap.save
