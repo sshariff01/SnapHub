@@ -30,7 +30,7 @@ class InstagramController < ApplicationController
         @access_token = session[:access_token]
       end
       @snaps = Snap.all
-      render "view"      
+      render "/snaps/view"      
     end
   end
   
