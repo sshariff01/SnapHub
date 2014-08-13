@@ -71,8 +71,8 @@ class SnapsController < ApplicationController
     if params["hub.challenge"]
       render :text => params["hub.challenge"]
     else
-      # var = JSON.parse(request.body)
-      @snap = Snap.new(:img_url => response.body.to_s, :caption => "caption")
+      var = JSON.parse(params[:object])
+      @snap = Snap.new(:img_url => var, :caption => "caption")
       @snap.save
       
       render :text => "success"
