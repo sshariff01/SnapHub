@@ -29,7 +29,7 @@ class TwitterController < ApplicationController
     
     client_rest.search("coffee", :result_type => "recent").take(3).collect do |object|
       puts 'START'
-      puts object
+      puts object.text
       puts 'FINISH'
     end
     
