@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
   match 'oauth/connect', to: 'snaps#connect', via: :get
   match 'redirect/callback', to: 'snaps#callback', via: :get
-  match 'snaps/process_subscription', to: 'snaps#process_subscription', via: [:get, :post]
+  match 'snaps/subscription_callback', to: 'snaps#subscription_callback', via: [:get, :post]
 
   
 

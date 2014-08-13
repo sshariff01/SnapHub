@@ -60,14 +60,14 @@ class SnapsController < ApplicationController
   def subscribe
     Thread.new do |t|
       options = {:object_id => HASHTAG}
-      Instagram.create_subscription('tag', "http://snaphub.herokuapp.com/snaps/process_subscription", aspect = 'media', options)
+      Instagram.create_subscription('tag', "http://snaphub.herokuapp.com/snaps/subscription_callback", aspect = 'media', options)
       t.exit
     end
     
     redirect_to "/snaps/view"
   end
   
-  def process_subscription
+  def subscription_callback
     if params["hub.challenge"]
       render :text => params["hub.challenge"]
     else
