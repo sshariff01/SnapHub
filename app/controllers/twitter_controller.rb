@@ -12,6 +12,7 @@ class TwitterController < ApplicationController
     end
     
     client_rest.update("I'm tweeting with hashtag testphotographytag2014 #testphotographytag2014")
+    puts 'made a tweet'
     
     client_stream = Twitter::Streaming::Client.new do |config|
       config.consumer_key = 'Dx5V1VzAGrFRfosfH7mn4G6bu'
