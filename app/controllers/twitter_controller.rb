@@ -20,14 +20,16 @@ class TwitterController < ApplicationController
       # config.access_token_secret = 'KdcTYayXEh4zGn6oNNdEvvWtjaM623clrRI07eePQZD8L'
     # end
     
-    topics = ["testphotographytag2014"]
+    topics = ["testphotographytag2014", "coffee"]
     
     # client_stream.filter(:track => topics.join(",")) do |object|
       # puts object.text if object.is_a?(Twitter::Tweet)
     # end
     
-    client_rest.search("testphotographytag2014", :result_type => "recent") do |object|
-      puts object.text if object.is_a?(Twitter::Tweet)
+    client_rest.search(:q => topics.join(","), :result_type => "recent") do |object|
+      puts 'START'
+      puts object.text
+      puts 'FINISH'
     end
     
     render :text => "success"
