@@ -12,7 +12,7 @@ class TwitterController < ApplicationController
       config.access_token_secret = 'KdcTYayXEh4zGn6oNNdEvvWtjaM623clrRI07eePQZD8L'
     end
 
-    topics = ["#coffee"]
+    topics = ["coffee"]
     client.filter(:track => topics.join(",")) do |object|
       puts object.text if object.is_a?(Twitter::Tweet)
     end
