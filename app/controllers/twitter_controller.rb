@@ -18,7 +18,7 @@ class TwitterController < ApplicationController
       config.access_token_secret = 'KdcTYayXEh4zGn6oNNdEvvWtjaM623clrRI07eePQZD8L'
     end
     
-    client_rest.update("I'm tweeting with hashtag #testphotographytag2014")
+    client_rest.update("I'm tweeting with hashtag testphotographytag2014 #testphotographytag2014")
     
     topics = ["testphotographytag2014"]
     client_stream.filter(:track => topics.join(",")) do |object|
