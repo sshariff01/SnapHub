@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20140812182556) do
 
   create_table "snaps", force: true do |t|
+    t.string   "media_id"
     t.string   "img_url"
     t.string   "caption",    limit: 50
     t.datetime "created_at"
