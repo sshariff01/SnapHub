@@ -3,8 +3,12 @@
 	    $('.slideshow').cycle({
 			fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
 		});
-	});
-	
+		
+		var videos = document.getElementsByClassName('video');
+		for (var i=0; i < videos.length; i++) {
+			videos[i].volume = 0.0;
+		}
+	});	
 </script>
 
 <h1>Snaps#view</h1>
@@ -29,7 +33,7 @@
 			<% if s.media_type == "image" %>
 				<img src=<%= s.media_url %> width="400" height="400" />
 			<% else %>
-				<video class="video" width="400" height="400" autoplay loop volume="0">
+				<video class="video" width="400" height="400" autoplay loop>
 				    <source id=<%= s.media_id %> src=<%= s.media_url %> type="video/mp4">
 				    Your browser does not support the video tag or the file format of this video.
 				</video>
