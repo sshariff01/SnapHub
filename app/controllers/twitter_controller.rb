@@ -25,7 +25,6 @@ class TwitterController < ApplicationController
       client_stream.filter(:track => topics.join(",")) do |object|
         puts object.text if object.is_a?(Twitter::Tweet)
       end
-      puts 'done'
       t.exit
     end
 
