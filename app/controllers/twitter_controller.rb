@@ -1,5 +1,5 @@
 class TwitterController < ApplicationController
-  def user_tweet
+  def search_tag
     require "twitter"
   
     # Certain methods require authentication. To get your Twitter OAuth credentials,
