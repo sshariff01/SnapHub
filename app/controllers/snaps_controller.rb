@@ -71,9 +71,10 @@ class SnapsController < ApplicationController
     if params["hub.challenge"]
       render :text => params["hub.challenge"]
     else
-      puts request.body
-      @snap = Snap.new(:img_url => "request.body.to_s", :caption => "caption")
-      @snap.save
+      Rails.logger.debug params.inspect
+
+      # @snap = Snap.new(:img_url => "request.body.to_s", :caption => "caption")
+      # @snap.save
       
       render :text => "success"
     end
