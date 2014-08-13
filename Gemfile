@@ -41,3 +41,5 @@ gem 'spring',        group: :development
 
 gem 'instagram'
 
+gem 'twitter'
+

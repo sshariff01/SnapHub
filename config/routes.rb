@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   match 'oauth/connect', to: 'instagram#connect', via: :get
   match 'redirect/callback', to: 'instagram#callback', via: :get
   match 'instagram/subscription_callback', to: 'instagram#subscription_callback', via: [:get, :post]
+  
+  get 'twitter/user_tweet'
 
   
 
