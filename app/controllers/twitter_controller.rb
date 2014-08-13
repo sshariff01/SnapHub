@@ -27,7 +27,7 @@ class TwitterController < ApplicationController
       # puts object.text if object.is_a?(Twitter::Tweet)
     # end
     
-    client_rest.search("coffee", :result_type => "recent").collect do |object|
+    client_rest.search("testphotographytag2014", :result_type => "recent").collect do |object|
       puts 'START'
       puts object.text
       puts 'FINISH'
