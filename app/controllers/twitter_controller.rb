@@ -18,11 +18,10 @@ class TwitterController < ApplicationController
       if not Snap.exists?(:media_id => object.id)
         if object.media?
           media_url = object.media[0].media_uri 
-          puts media_url
-          snap = Snap.new(:media_id => object.id, :media_type => "image", :media_url => media_url.to_s, :caption => object.text)
+          snap = Snap.new(:media_id => object.id, :media_author => object.user.screen_name, :media_type => "image", :media_url => media_url.to_s, :caption => object.text)
           snap.save
         else
-          snap = Snap.new(:media_id => object.id, :media_type => "tweet", :caption => object.text)
+          snap = Snap.new(:media_id => object.id, :media_author => object.user.screen_name, :media_type => "tweet", :caption => object.text)
           snap.save
         end        
       end
