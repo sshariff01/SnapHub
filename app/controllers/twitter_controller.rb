@@ -1,4 +1,6 @@
 class TwitterController < ApplicationController
+  require 'uri'
+  
   def search_tag
     require "twitter"
   
@@ -14,8 +16,10 @@ class TwitterController < ApplicationController
     client_rest.search("#testphotographytag2014", :result_type => "recent").collect do |object|
       logger.info object.inspect
       if not Snap.exists?(:media_id => object.id)
-        if object["entities"]["media"]
-          snap = Snap.new(:media_id => object.id, :media_type => "image", :media_url => object["entities"]["media"]["media_url"], :caption => object.text)
+        if object.media?
+          media_url = object.media[0].media_uri 
+          puts media_url
+          snap = Snap.new(:media_id => object.id, :media_type => "image", :media_url => media_url.to_s, :caption => object.text)
           snap.save
         else
           snap = Snap.new(:media_id => object.id, :media_type => "tweet", :caption => object.text)
