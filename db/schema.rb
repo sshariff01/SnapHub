@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20140812182556) do
 
   create_table "snaps", force: true do |t|
     t.string   "media_id"
+    t.string   "media_author"
     t.string   "media_type"
     t.string   "media_url"
     t.string   "caption"
