@@ -1,14 +1,46 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 	    $('.slideshow').cycle({
-			fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-		});
+			fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+			timeout:  3000, 
+	        before:   onBefore 
+	    }); 
+	 
+	    function onBefore(curr, next, opts) { 
+	        // make sure we don't call addSlide before it is defined 
+	        if (!opts.addSlide) 
+	            return; 
+	        
+	        var elementsToAdd = $('.toAdd');
+	        $(".slideshow-toAdd").html("");
+	        for (var i = 0; i < elementsToAdd.length; i++) {
+	        	opts.addSlide(elementsToAdd[i]);
+	        	elementsToAdd.removeClass('toAdd');
+	        	// alert(elementsToAdd[i]);
+	        }
+	        
+	        // add slides for images 3 - 8 
+	        // slides can be a DOM element, a jQuery object, or a string 
+	        // for (var i=3; i < 9; i++) 
+	            // opts.addSlide(elementsToAdd[i]); 
+	    }; 
 		
 		var videos = document.getElementsByClassName('video');
 		for (var i=0; i < videos.length; i++) {
 			videos[i].volume = 0.0;
 		}
 	});	
+</script>
+<script>
+	window.setInterval(function(){
+		$.get("/twitter/search_tag",
+			function(){
+				$.get("/snaps/get_all",
+					function(){
+						
+					});
+		});
+	}, 6000)
 </script>
 
 <h1>Snaps#view</h1>
@@ -18,31 +50,17 @@
 	<p>Access Token: <%= @access_token.inspect %></p>
 <% end %>
 
-<% if @snaps.empty? %>
-	<p>No pictures yet.. But check out these default images in action!</p>
-	<div class="slideshow">
-		<img src="http://malsup.github.com/images/beach1.jpg" width="200" height="200" />
-		<img src="http://malsup.github.com/images/beach2.jpg" width="200" height="200" />
-		<img src="http://malsup.github.com/images/beach3.jpg" width="200" height="200" />
-		<img src="http://malsup.github.com/images/beach4.jpg" width="200" height="200" />
-		<img src="http://malsup.github.com/images/beach5.jpg" width="200" height="200" />
-	</div>
-<% else %>
-	<div class="slideshow">
-		<% @snaps.each do |s| %>
-			<% if s.media_type == "image" %>
-				<img src=<%= s.media_url %> width="400" height="400" />
-			<% elsif s.media_type == "video" %>
-				<video class="video" width="400" height="400" autoplay loop>
-				    <source id=<%= s.media_id %> src=<%= s.media_url %> type="video/mp4">
-				    Your browser does not support the video tag or the file format of this video.
-				</video>
-			<% elsif s.media_type == "tweet" %>
-				<div><p><%= s.caption %></p></div>
-			<% end %>
-		<% end %>
-	</div>
-<% end %>
+<div class="slideshow">
+	<img src="http://malsup.github.com/images/beach1.jpg" width="200" height="200" />
+	<img src="http://malsup.github.com/images/beach2.jpg" width="200" height="200" />
+	<img src="http://malsup.github.com/images/beach3.jpg" width="200" height="200" />
+	<img src="http://malsup.github.com/images/beach4.jpg" width="200" height="200" />
+	<img src="http://malsup.github.com/images/beach5.jpg" width="200" height="200" />
+</div>
+
+<div class="slideshow-toAdd" style="display: none;">
+	
+</div>
 
 
 <br />
@@ -53,4 +71,4 @@
 
 <%= link_to "Subscribe to #testphotographytag2014", controller: "instagram", action: "subscribe" %>
 
-<%= link_to "Make a Tweet!", controller: "twitter", action: "search_tag" %>
+<!-- <%#= link_to "Make a Tweet!", controller: "twitter", action: "search_tag" %> -->

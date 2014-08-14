@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   match 'instagram/subscription_callback', to: 'instagram#subscription_callback', via: [:get, :post]
   
   get 'twitter/search_tag'
+  get 'snaps/get_all'
 
   
 
