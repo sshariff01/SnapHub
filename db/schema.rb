@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140812182556) do
     t.string   "media_type"
     t.string   "media_url"
     t.string   "caption"
+    t.boolean  "added"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

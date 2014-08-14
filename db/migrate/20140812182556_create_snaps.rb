@@ -6,6 +6,7 @@ class CreateSnaps < ActiveRecord::Migration
       t.string :media_type
       t.string :media_url
       t.string :caption
+      t.boolean :added
 
       t.timestamps
     end

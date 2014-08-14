@@ -14,8 +14,16 @@ class SnapsController < ApplicationController
     @snaps = Snap.all
   end
   
-  def get_all
-    @snaps = Snap.all
+  def get_new
+    @snaps = Snap.where(:added => false)
+    
+    @snaps.each do |snap|
+      snap.added = true
+      snap.save
+      # if !snap.save
+        # render :text => "There was a problem updating the added attribute!"
+      # end
+    end
     
     respond_to do |format|
       format.js

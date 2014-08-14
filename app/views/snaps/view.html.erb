@@ -12,35 +12,30 @@
 	            return; 
 	        
 	        var elementsToAdd = $('.toAdd');
-	        $(".slideshow-toAdd").html("");
+	        $(".slideshow-toAdd").empty();
 	        for (var i = 0; i < elementsToAdd.length; i++) {
 	        	opts.addSlide(elementsToAdd[i]);
 	        	elementsToAdd.removeClass('toAdd');
-	        	// alert(elementsToAdd[i]);
 	        }
 	        
-	        // add slides for images 3 - 8 
-	        // slides can be a DOM element, a jQuery object, or a string 
-	        // for (var i=3; i < 9; i++) 
-	            // opts.addSlide(elementsToAdd[i]); 
+	        var videos = document.getElementsByClassName('video');
+			for (var i=0; i < videos.length; i++) {
+				videos[i].volume = 0.0;
+			}
 	    }; 
 		
-		var videos = document.getElementsByClassName('video');
-		for (var i=0; i < videos.length; i++) {
-			videos[i].volume = 0.0;
-		}
 	});	
 </script>
 <script>
 	window.setInterval(function(){
 		$.get("/twitter/search_tag",
 			function(){
-				$.get("/snaps/get_all",
+				$.get("/snaps/get_new",
 					function(){
 						
 					});
 		});
-	}, 6000)
+	}, 30000)
 </script>
 
 <h1>Snaps#view</h1>
@@ -51,11 +46,8 @@
 <% end %>
 
 <div class="slideshow">
-	<img src="http://malsup.github.com/images/beach1.jpg" width="200" height="200" />
-	<img src="http://malsup.github.com/images/beach2.jpg" width="200" height="200" />
-	<img src="http://malsup.github.com/images/beach3.jpg" width="200" height="200" />
-	<img src="http://malsup.github.com/images/beach4.jpg" width="200" height="200" />
-	<img src="http://malsup.github.com/images/beach5.jpg" width="200" height="200" />
+	<img src="http://malsup.github.com/images/beach1.jpg" width="400" />
+	<img src="http://malsup.github.com/images/beach2.jpg" width="400" />
 </div>
 
 <div class="slideshow-toAdd" style="display: none;">
@@ -69,6 +61,6 @@
 	<p>Subscriptions: <%= @subscriptions.inspect %></p>
 <% end %>
 
-<%= link_to "Subscribe to #testphotographytag2014", controller: "instagram", action: "subscribe" %>
+<!-- <%= link_to "Subscribe to #testphotographytag2014", controller: "instagram", action: "subscribe" %> -->
 
 <!-- <%#= link_to "Make a Tweet!", controller: "twitter", action: "search_tag" %> -->
