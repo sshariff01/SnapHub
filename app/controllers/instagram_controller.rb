@@ -61,7 +61,7 @@ class InstagramController < ApplicationController
             media_url = media.images["standard_resolution"]["url"]
           end 
           
-          snap = Snap.new(:media_id => media.id, :media_author => media.from["username"], :media_type => media.type, :media_url => media_url, :caption => media.caption["text"])
+          snap = Snap.new(:media_id => media.id, :media_author => media.from.username, :media_type => media.type, :media_url => media_url, :caption => media.caption["text"])
           snap.save
         end
       end
