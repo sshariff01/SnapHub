@@ -16,6 +16,7 @@
 	        for (var i = 0; i < elementsToAdd.length; i++) {
 	        	opts.addSlide(elementsToAdd[i]);
 	        	elementsToAdd.removeClass('toAdd');
+	        	elementsToAdd.addClass('added');
 	        }
 	        
 	        var videos = document.getElementsByClassName('video');
