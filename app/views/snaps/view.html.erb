@@ -10,6 +10,11 @@
 	        // make sure we don't call addSlide before it is defined 
 	        if (!opts.addSlide) 
 	            return; 
+	            
+            var videos = document.getElementsByClassName('video');
+			for (var i=0; i < videos.length; i++) {
+				videos[i].volume = 0.0;
+			}
 	        
 	        var elementsToAdd = $('.toAdd');
 	        $(".slideshow-toAdd").empty();
@@ -19,11 +24,6 @@
 	        	var element = document.getHTML(elementsToAdd[i], true);
 	        	opts.addSlide(element);
 	        }
-	        
-	        var videos = document.getElementsByClassName('video');
-			for (var i=0; i < videos.length; i++) {
-				videos[i].volume = 0.0;
-			}
 	    }; 
 	    
 	    document.getHTML= function(who, deep){
@@ -50,7 +50,7 @@
 						
 					});
 		});
-	}, 3000)
+	}, 30000)
 </script>
 
 <h1>Snaps#view</h1>
