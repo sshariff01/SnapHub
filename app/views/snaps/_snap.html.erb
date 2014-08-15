@@ -1,14 +1,20 @@
 <% if not @snaps.empty? %>
 	<% @snaps.each do |s| %>
 		<% if s.media_type == "image" %>
-			<img class="toAdd" src=<%= s.media_url %> width="600" height="600" />
+			<div class="toAdd" style="width: 100%; height: 100%;" >
+				<img class="toAdd" src=<%= s.media_url %> style="padding: 15px; height: 570px; width: 570px;" />
+			</div>
 		<% elsif s.media_type == "video" %>
-			<video class="video toAdd" width="600" height="600" autoplay="true" loop="true">
-			    <source id=<%= s.media_id %> src=<%= s.media_url %> type="video/mp4">
-			    Your browser does not support the video tag or the file format of this video.
-			</video>
+			<div class="toAdd" style="width: 100%; height: 100%;" >
+				<video class="video" autoplay="true" loop="true" style="padding: 15px; height: 570px; width: 570px;">
+				    <source id=<%= s.media_id %> src=<%= s.media_url %> type="video/mp4">
+				    Your browser does not support the video tag or the file format of this video.
+				</video>
+			</div>
 		<% elsif s.media_type == "tweet" %>
-			<div class="toAdd" ><p><%= s.caption %></p></div>
+			<div class="toAdd" style="width: 100%; height: 100%;" >
+				<div style="padding: 15px; height: 570px; width: 570px; background-color: white;"><p><%= s.caption %></p></div>
+			</div>
 		<% end %>
 	<% end %>
 <% end %>
