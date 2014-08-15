@@ -67,7 +67,7 @@
 			<% if s.media_type == "image" %>
 				<img class="toAdd" src=<%= s.media_url %> width="400" />
 			<% elsif s.media_type == "video" %>
-				<video class="video toAdd" width="400" height="400" autoplay="true" loop="true">
+				<video class="video added" width="400" height="400" autoplay="true" loop="true">
 				    <source id=<%= s.media_id %> src=<%= s.media_url %> type="video/mp4">
 				    Your browser does not support the video tag or the file format of this video.
 				</video>
