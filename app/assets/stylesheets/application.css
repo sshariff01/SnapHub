@@ -14,6 +14,7 @@
  *= require_self
  */
 
+body { background-image: url('slideshowbg.jpg'); background-size: cover; }
 
 .slideshow { height: 232px; width: 232px; }
 .slideshow img { padding: 15px; border: 1px solid #ccc; background-color: #000; }
