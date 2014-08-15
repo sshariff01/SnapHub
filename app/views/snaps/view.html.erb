@@ -28,6 +28,7 @@
 	});	
 </script>
 <script>
+/*
 	window.setInterval(function(){
 		$.get("/twitter/search_tag",
 			function(){
@@ -37,6 +38,7 @@
 					});
 		});
 	}, 30000)
+*/
 </script>
 
 <h1>Snaps#view</h1>
@@ -47,16 +49,6 @@
 <% end %>
 
 <div class="slideshow">
-	<% if not @snaps.empty? %>
-		<% @snaps.each do |s| %>
-			<% if s.media_type == "video" %>
-				<video class="video added" width="400" height="400" autoplay="true" loop="true">
-				    <source id=<%= s.media_id %> src=<%= s.media_url %> type="video/mp4">
-				    Your browser does not support the video tag or the file format of this video.
-				</video>
-			<% end %>
-		<% end %>
-	<% end %>
 	<img src="http://malsup.github.com/images/beach1.jpg" width="400" />
 	<img src="http://malsup.github.com/images/beach2.jpg" width="400" />
 </div>
