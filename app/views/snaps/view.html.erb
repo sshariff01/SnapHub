@@ -14,8 +14,8 @@
 	        var elementsToAdd = $('.toAdd');
 	        //$(".slideshow-toAdd").empty();
 	        for (var i = 0; i < elementsToAdd.length; i++) {
-	        	elementsToAdd[i].removeClass('toAdd');
-	        	elementsToAdd[i].addClass('added');
+	        	elementsToAdd.removeClass('toAdd');
+	        	elementsToAdd.addClass('added');
 	        	var element = document.getHTML(elementsToAdd[i], true);
 	        	opts.addSlide(element);
 	        }
