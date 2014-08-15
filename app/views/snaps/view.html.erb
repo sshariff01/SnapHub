@@ -53,26 +53,19 @@
 	}, 30000)
 </script>
 
-<h1>Snaps#view</h1>
-<p>Find me in app/views/snaps/view.html.erb</p>
-
-<% if @access_token %>
-	<p>Access Token: <%= @access_token.inspect %></p>
-<% end %>
-
 <div class="slideshow">
-	<img src="http://malsup.github.com/images/beach1.jpg" width="400" />
-	<img src="http://malsup.github.com/images/beach2.jpg" width="400" />
+	<img src="http://malsup.github.com/images/beach1.jpg" width="600" height="600" />
+	<img src="http://malsup.github.com/images/beach2.jpg" width="600" height="600" />
 </div>
 
 <div class="slideshow-toAdd" style="display: none;">
 	<% if not @snaps.empty? %>
 		<% @snaps.each do |s| %>
 			<% if s.media_type == "image" %>
-				<img src=<%= s.media_url %> width="400" />
+				<img src=<%= s.media_url %> width="600" />
 			<% elsif s.media_type == "video" %>
 				<div class="toAdd">
-					<video class="video" width="400" height="400" autoplay="true" loop="true">
+					<video class="video" width="600" height="600" autoplay="true" loop="true">
 					    <source id=<%= s.media_id %> src=<%= s.media_url %> type="video/mp4">
 					    Your browser does not support the video tag or the file format of this video.
 					</video>
@@ -83,14 +76,3 @@
 		<% end %>
 	<% end %>
 </div>
-
-
-<br />
-
-<% if @subscriptions %>
-	<p>Subscriptions: <%= @subscriptions.inspect %></p>
-<% end %>
-
-<!-- <%= link_to "Subscribe to #testphotographytag2014", controller: "instagram", action: "subscribe" %> -->
-
-<!-- <%#= link_to "Make a Tweet!", controller: "twitter", action: "search_tag" %> -->
