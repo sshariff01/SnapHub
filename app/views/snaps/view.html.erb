@@ -71,6 +71,10 @@
 				    <source id=<%= s.media_id %> src=<%= s.media_url %> type="video/mp4">
 				    Your browser does not support the video tag or the file format of this video.
 				</video>
+				<video class="video toAdd" width="400" height="400" autoplay="true" loop="true">
+				    <source id=<%= s.media_id %> src=<%= s.media_url %> type="video/mp4">
+				    Your browser does not support the video tag or the file format of this video.
+				</video>
 			<% elsif s.media_type == "tweet" %>
 				<div class="toAdd" ><p><%= s.caption %></p></div>
 			<% end %>
