@@ -12,7 +12,7 @@
 	            return; 
 	        
 	        var elementsToAdd = $('.toAdd');
-	        $(".slideshow-toAdd").empty();
+	        //$(".slideshow-toAdd").empty();
 	        for (var i = 0; i < elementsToAdd.length; i++) {
 	        	opts.addSlide(elementsToAdd[i]);
 	        	elementsToAdd.removeClass('toAdd');
@@ -61,7 +61,7 @@
 	<img src="http://malsup.github.com/images/beach2.jpg" width="400" />
 </div>
 
-<div class="slideshow-toAdd" style="display: none;">
+<div class="slideshow-toAdd" style="display: block;">
 	<% if not @snaps.empty? %>
 		<% @snaps.each do |s| %>
 			<% if s.media_type == "image" %>
