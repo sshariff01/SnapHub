@@ -59,8 +59,8 @@
 			<% if s.media_type == "image" %>
 				<div class="toAdd" style="width: 100%; height: 100%;" >
 					<div class='wrapper'>  
-						<div style="margin: 15px; height: 540px; width: 540px; background-color: white;">
-							<img src=<%= s.media_url %> style="height: 100%; width: 100%;" />
+						<div style="margin: 15px; background-color: white;">
+							<img src=<%= s.media_url %> style="height: 570px; width: 570px;">
 							<div class='description' style="margin: 15px; width: 100%; border-radius: 0;">  
 							    <p class='description_content'><%= s.caption %></p>  
 							</div>
@@ -70,8 +70,8 @@
 			<% elsif s.media_type == "video" %>
 				<div class="toAdd" style="width: 100%; height: 100%;" >
 					<div class='wrapper'>
-						<div style="margin: 15px; height: 540px; width: 540px; background-color: white;">
-							<video class="video" autoplay="true" loop="true" style="height: 100%; width: 100%;">
+						<div style="margin: 15px; background-color: white;">
+							<video class="video" autoplay="true" loop="true" style="height: 570px; width: 570px;">
 							    <source id=<%= s.media_id %> src=<%= s.media_url %> type="video/mp4">
 							    Your browser does not support the video tag or the file format of this video.
 							</video>
