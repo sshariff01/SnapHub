@@ -57,11 +57,13 @@ class InstagramController < ApplicationController
         if not Snap.exists?(:media_id => media.id)
           if media.type == "video"
             media_url = media.videos["standard_resolution"]["url"]
+            media_type = "video"
           else
             media_url = media.images["standard_resolution"]["url"]
+            media_type = "image_instagram"
           end 
           
-          snap = Snap.new(:media_id => media.id, :media_author => media.user["username"], :media_type => media.type, :media_url => media_url, :caption => media.caption["text"], :added => false)
+          snap = Snap.new(:media_id => media.id, :media_author => media.user["username"], :media_type => media_type, :media_url => media_url, :caption => media.caption["text"], :added => false)
           snap.save
         end
       end
