@@ -42,10 +42,3 @@ p.customfont {
     font-family: "Foglighten", Helvetica, Verdana;
 }
 
-@font-face {
-    font-family: "FoglightenCalt";
-    src: asset-data-url('FoglightenCalt.otf');
-}
-p.customheadfont {
-    font-family: "FoglightenCalt", Helvetica, Verdana;
-}
