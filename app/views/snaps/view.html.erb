@@ -60,7 +60,7 @@
 				<div class="toAdd" style="width: 100%; height: 100%;" >
 					<div class='wrapper'>  
 						<div style="margin: 15px; height: 540px; width: 540px; background-color: white;">
-							<img src=<%= s.media_url %> />
+							<img src=<%= s.media_url %> style="height: 540px; width: 540px;" />
 							<div class='description' style="margin: 15px; width: 100%; border-radius: 0;">  
 							    <p class='description_content'><%= s.caption %></p>  
 							</div>
@@ -71,7 +71,7 @@
 				<div class="toAdd" style="width: 100%; height: 100%;" >
 					<div class='wrapper'>
 						<div style="margin: 15px; height: 540px; width: 540px; background-color: white;">
-							<video class="video" autoplay="true" loop="true">
+							<video class="video" autoplay="true" loop="true" style="height: 540px; width: 540px;">
 							    <source id=<%= s.media_id %> src=<%= s.media_url %> type="video/mp4">
 							    Your browser does not support the video tag or the file format of this video.
 							</video>
