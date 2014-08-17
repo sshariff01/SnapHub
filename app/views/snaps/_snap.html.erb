@@ -1,11 +1,18 @@
 <% if not @snaps.empty? %>
 	<% @snaps.each do |s| %>
-		<% if s.media_type == "image" %>
+		<% if s.media_type.include? "image" %>
 			<div class="toAdd" style="width: 100%; height: 100%;" >
 				<div class='wrapper'>  
 					<div style="margin: 15px; height: 570px; width: 570px; background-color: white;">
+						<div style="position: absolute; width: 570px; background-color: transparent;">
+							<% if s.media_type.include? "instagram" %>
+								<%= image_tag 'instagram-5.png', :style=> "height: 60px; background-color: transparent; float: right; padding: 10px;" %>
+							<% elsif s.media_type.include? "tweet" %>
+								<%= image_tag 'twitter-5.png', :style=> "height: 60px; background-color: transparent; float: right; padding: 10px;" %>
+							<% end %>
+						</div>
 						<img src=<%= s.media_url %> style="height: 570px; width: 570px;" />
-						<div class='description' style="margin: 15px; width: 100%; border-radius: 0;">  
+						<div class='description' style="margin: 15px; width: 570px; border-radius: 0;">  
 						    <p class='description_content'><%= s.caption %></p>  
 						</div>
 					</div>
@@ -15,11 +22,14 @@
 			<div class="toAdd" style="width: 100%; height: 100%;" >
 				<div class='wrapper'>
 					<div style="margin: 15px; height: 570px; width: 570px; background-color: white;">
+						<div style="position: absolute; width: 570px; background-color: transparent;">
+							<%= image_tag 'instagram-5.png', :style=> "height: 60px; background-color: transparent; float: right; padding: 10px;" %>
+						</div>
 						<video class="video" autoplay="true" loop="true" style="height: 570px; width: 570px;">
 						    <source id=<%= s.media_id %> src=<%= s.media_url %> type="video/mp4">
 						    Your browser does not support the video tag or the file format of this video.
 						</video>
-						<div class='description' style="margin: 15px; width: 100%; border-radius: 0;">  
+						<div class='description' style="margin: 15px; width: 570px; border-radius: 0;">  
 						    <p class='description_content'><%= s.caption %></p>  
 						</div>
 					</div>
@@ -28,10 +38,13 @@
 		<% elsif s.media_type == "tweet" %>
 			<div class="toAdd" style="width: 100%; height: 100%;" >
 				<div class='wrapper'>
-					<div style="margin: 15px; padding: 15px; height: 540px; width: 540px; background-color: white;">
-						<p><%= s.caption %></p>
-						<div class='description' style="margin: 15px; width: 100%; border-radius: 0;">  
-						    <p class='description_content'><%= s.caption %></p>  
+					<div style="margin: 15px; height: 570px; width: 570px; background-color: white;">
+						<div style="position: absolute; width: 570px; background-color: transparent;">
+							<%= image_tag 'twitter-5.png', :style=> "height: 60px; background-color: transparent; float: right; padding: 10px;" %>
+						</div>
+						<div style="padding: 15px; background-color: white;">
+							<p class="customfont" style="font-size: 38px; margin-bottom: 0px;">@<%= s.media_author %></p>
+							<p style="font-family: Helvetica; font-size: 26px; font-weight: 200; line-height: 1.5; margin-top: 10px;"><%= s.caption %></p>
 						</div>
 					</div>
 				</div>
