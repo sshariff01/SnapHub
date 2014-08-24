@@ -7,7 +7,7 @@
 body { background-image: url('http://emilygoesaroundtheworld.files.wordpress.com/2012/04/img_7022.jpg'); background-size: cover; }
  
 .container {
-  width: 904px; height: 604px;
+  width: 954px; height: 604px;
   position: absolute; margin: auto; top: 0; left: 0; bottom: 0; right: 0;
 }
   
@@ -44,7 +44,26 @@ div.description_content{
     font-family: "Foglighten";
     src: asset-data-url('Foglighten.otf');
 }
+
 p.customfont { 
     font-family: "Foglighten", Helvetica, Verdana;
+}
+
+@font-face {
+    font-family: "FoglightenNo04";
+    src: asset-data-url('FoglightenNo04.otf');
+}
+
+p.customfont-2 { 
+    font-family: "FoglightenNo04", Helvetica, Verdana;
+}
+
+
+.instructions p {
+    margin-top: 10px !important;
+}
+
+.instructions ol li {
+  padding: 5px 0;
 }
 
