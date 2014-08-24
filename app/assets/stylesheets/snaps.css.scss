@@ -29,10 +29,14 @@ div.description{
     opacity:0.6; /* transparency */  
     filter:alpha(opacity=60); /* IE transparency */  
 }  
-p.description_content{  
-    padding:15px;  
-    margin:0px;  
-}  
+div.description_content{  
+    padding:10px;  
+    margin:0px;
+} 
+
+.caption {
+    opacity: 1.0;
+}
 
 @font-face {
     font-family: "Foglighten";
