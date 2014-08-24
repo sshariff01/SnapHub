@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body { background-image: asset-data-url('dream_bg.jpg'); background-size: cover; }
+// body { background-image: asset-data-url('dream_bg.jpg'); background-size: cover; }
+
+body { background-image: url('http://emilygoesaroundtheworld.files.wordpress.com/2012/04/img_7022.jpg'); background-size: cover; }
  
 .container {
   width: 904px; height: 604px;
