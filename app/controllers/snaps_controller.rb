@@ -16,6 +16,7 @@ class SnapsController < ApplicationController
   
   def get_new
     @snaps = Snap.where(:added => false)
+    @all_snaps = Snap.all
     
     @snaps.each do |snap|
       snap.added = true

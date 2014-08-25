@@ -4,7 +4,7 @@
 
 // body { background-image: asset-data-url('dream_bg.jpg'); background-size: cover; }
 
-body { background-image: url('http://emilygoesaroundtheworld.files.wordpress.com/2012/04/img_7022.jpg'); background-size: cover; }
+body { background-image: url('http://emilygoesaroundtheworld.files.wordpress.com/2012/04/img_7022.jpg'); background-size: cover; background-style: no-repeat; }
  
 .container {
   width: 954px; height: 604px;
@@ -60,10 +60,17 @@ p.customfont-2 {
 
 
 .instructions p {
-    margin-top: 10px !important;
+    margin: 10px 0 !important;
+    font-size: 30px;
+}
+
+.instructions ol {
+  margin: 0 !important;
 }
 
 .instructions ol li {
-  padding: 5px 0;
+  padding: 2px 0;
+  font-size: 24px;
+  line-height: 1.5em;
 }
 
