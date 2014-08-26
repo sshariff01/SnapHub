@@ -3,7 +3,7 @@
 	    $('.slideshow').cycle({
 			fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
 			timeout:  3000, 
-	        before:   onBefore 
+	        before:   onBefore, 
 	    }); 
 	 
 	    function onBefore(curr, next, opts) { 
@@ -25,6 +25,14 @@
 	        	opts.addSlide(element);
 	        }
 	    }; 
+	    
+	    /*function onAfter(curr, next, opts, fwd) {
+		  // on the first pass, removeSlide is undefined (plugin hasn't yet created the fn yet) 
+		  if (!opts.removeSlide) {return;}
+		  
+		  // Remove the first slide
+		  opts.removeSlide();
+		}*/
 	    
 	    document.getHTML= function(who, deep){
 		    if(!who || !who.tagName) return '';
