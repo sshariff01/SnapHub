@@ -79,7 +79,7 @@
 													<%= image_tag 'twitter-5.png', :style=> "height: 60px; background-color: transparent; float: right; padding: 10px;" %>
 												<% end %>
 											</div>
-											<img src=<%= s.media_url %> style="width: 570px; height: 570px; position: absolute; margin: auto; top: 0; left: 0; bottom: 0; right: 0;" />
+											<img src=<%= s.media_url %> style="max-width: 570px; max-height: 570px; position: absolute; margin: auto; top: 0; left: 0; bottom: 0; right: 0;" />
 											<div class='description' style="margin: 15px; width: 570px; border-radius: 0;">
 												<div class="description_content">  
 												    <p class="customfont caption" style="margin-bottom: 0px;"><strong>@<%= s.media_author %></strong></p>
@@ -96,7 +96,7 @@
 											<div style="position: absolute; width: 570px; background-color: transparent;">
 												<%= image_tag 'instagram-5.png', :style=> "height: 60px; background-color: transparent; float: right; padding: 10px;" %>
 											</div>
-											<video class="video" autoplay="true" loop="true" style="width: 570px; height: 570px; position: absolute; margin: auto; top: 0; left: 0; bottom: 0; right: 0;">
+											<video class="video" autoplay="true" loop="true" style="max-width: 570px; max-height: 570px; position: absolute; margin: auto; top: 0; left: 0; bottom: 0; right: 0;">
 											    <source id=<%= s.media_id %> src=<%= s.media_url %> type="video/mp4">
 											    Your browser does not support the video tag or the file format of this video.
 											</video>
@@ -144,13 +144,12 @@
 						<li>Watch it appear live on the slideshow!</li>
 					</ol>
 				</div>
-				<!--
 				<div class="icons" style="padding: 0px 35px; float: right;">
 					<%= image_tag 'Instagram-icon.png', :style=> "width: 50px;" %>
 					<%= image_tag 'Twitter-icon.png', :style=> "width: 50px;" %>
 				</div>
 				<br/>
-				<br/> -->
+				<br/>
 				<div class="mentions-container">
 					<div class="mentions" style="margin: 0px; padding: 25px; background-color: black; color: black; text-align: center;">
 						<%= image_tag 'mentions_no4.png', :style=> "width: 170px;" %>
