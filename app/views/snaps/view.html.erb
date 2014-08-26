@@ -72,7 +72,7 @@
 								<div class="toAdd" style="width: 100%; height: 100%;" >
 									<div class='wrapper'>  
 										<div style="margin: 15px; height: 570px; width: 570px; background-color: black;">
-											<div style="position: absolute; width: 570px; background-color: transparent;">
+											<div style="z-index: 999; position: absolute; width: 570px; background-color: transparent;">
 												<% if s.media_type.include? "instagram" %>
 													<%= image_tag 'instagram-5.png', :style=> "height: 60px; background-color: transparent; float: right; padding: 10px;" %>
 												<% elsif s.media_type.include? "tweet" %>
@@ -93,7 +93,7 @@
 								<div class="toAdd" style="width: 100%; height: 100%;" >
 									<div class='wrapper'>
 										<div style="margin: 15px; height: 570px; width: 570px; background-color: black;">
-											<div style="position: absolute; width: 570px; background-color: transparent;">
+											<div style="z-index: 999; position: absolute; width: 570px; background-color: transparent;">
 												<%= image_tag 'instagram-5.png', :style=> "height: 60px; background-color: transparent; float: right; padding: 10px;" %>
 											</div>
 											<video class="video" autoplay="true" loop="true" style="max-width: 570px; max-height: 570px; position: absolute; margin: auto; top: 0; left: 0; bottom: 0; right: 0;">
@@ -113,7 +113,7 @@
 								<div class="toAdd" style="width: 100%; height: 100%;" >
 									<div class='wrapper'>
 										<div style="margin: 15px; height: 570px; width: 570px; background-color: whitesmoke;">
-											<div style="position: absolute; width: 570px; background-color: transparent;">
+											<div style="z-index: 999; position: absolute; width: 570px; background-color: transparent;">
 												<%= image_tag 'twitter-5.png', :style=> "height: 60px; background-color: transparent; float: right; padding: 10px;" %>
 											</div>
 											<div style="padding: 15px; background-color: whitesmoke;">
