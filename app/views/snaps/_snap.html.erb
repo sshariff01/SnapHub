@@ -3,7 +3,7 @@
 		<% if s.media_type.include? "image" %>
 			<div class="toAdd" style="width: 100%; height: 100%;" >
 				<div class='wrapper'>  
-					<div style="margin: 15px; height: 570px; width: 570px; background-color: white;">
+					<div style="margin: 15px; height: 570px; width: 570px; background-color: black;">
 						<div style="position: absolute; width: 570px; background-color: transparent;">
 							<% if s.media_type.include? "instagram" %>
 								<%= image_tag 'instagram-5.png', :style=> "height: 60px; background-color: transparent; float: right; padding: 10px;" %>
@@ -11,7 +11,7 @@
 								<%= image_tag 'twitter-5.png', :style=> "height: 60px; background-color: transparent; float: right; padding: 10px;" %>
 							<% end %>
 						</div>
-						<img src=<%= s.media_url %> style="height: 570px; width: 570px;" />
+						<img src=<%= s.media_url %> style="max-width: 570px; max-height: 570px; position: absolute; margin: auto; top: 0; left: 0; bottom: 0; right: 0;" />
 						<div class='description' style="margin: 15px; width: 570px; border-radius: 0;">
 							<div class="description_content">  
 							    <p class="customfont caption" style="margin-bottom: 0px;"><strong>@<%= s.media_author %></strong></p>
@@ -24,11 +24,11 @@
 		<% elsif s.media_type == "video" %>
 			<div class="toAdd" style="width: 100%; height: 100%;" >
 				<div class='wrapper'>
-					<div style="margin: 15px; height: 570px; width: 570px; background-color: white;">
+					<div style="margin: 15px; height: 570px; width: 570px; background-color: black;">
 						<div style="position: absolute; width: 570px; background-color: transparent;">
 							<%= image_tag 'instagram-5.png', :style=> "height: 60px; background-color: transparent; float: right; padding: 10px;" %>
 						</div>
-						<video class="video" autoplay="true" loop="true" style="height: 570px; width: 570px;">
+						<video class="video" autoplay="true" loop="true" style="max-width: 570px; max-height: 570px; position: absolute; margin: auto; top: 0; left: 0; bottom: 0; right: 0;">
 						    <source id=<%= s.media_id %> src=<%= s.media_url %> type="video/mp4">
 						    Your browser does not support the video tag or the file format of this video.
 						</video>
