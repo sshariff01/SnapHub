@@ -4,6 +4,9 @@
 			fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
 			timeout:  3000, 
 	        before:   onBefore, 
+	        end:      function() {  
+		        alert('The slideshow has ended.');  
+		    }
 	    }); 
 	 
 	    function onBefore(curr, next, opts) { 

@@ -24,7 +24,7 @@ class SnapsController < ApplicationController
   end
   
   def admin
-    @snaps = Snap.all
+    @snaps = Snap.where(:removed => false)
   end
   
   def remove
