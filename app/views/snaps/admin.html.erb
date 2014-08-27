@@ -1,0 +1,66 @@
+<% if not @snaps.empty? %>
+	<% @snaps.each do |s| %>
+		<% if s.media_type.include? "image" %>
+			<div class='wrapper'>  
+				<div style="margin: 15px; height: 570px; width: 570px; background-color: black;">
+					<div style="z-index: 999; position: absolute; width: 570px; background-color: transparent;">
+						<div class="remove-option" style="z-index: 999; float:right; padding: 10px;">
+							<%= form_for s, url: {action: "remove"}, method: "post" do |f| %>
+							  <%= f.hidden_field :id, value: s.id %>
+							  <%= f.submit "Remove", :class => "btn btn-danger" %>
+							<% end %>
+						</div>
+					</div>
+					<img src=<%= s.media_url %> style="max-width: 570px; max-height: 570px; position: absolute; margin: auto; top: 0; left: 0; bottom: 0; right: 0;" />
+					<div class='description' style="margin: 15px; width: 570px; border-radius: 0;">
+						<div class="description_content">  
+						    <p class="customfont caption" style="margin-bottom: 0px;"><strong>@<%= s.media_author %></strong></p>
+							<p class="caption" style="font-family: Helvetica; font-weight: 200; line-height: 1.5; margin-top: 5px;"><%= s.caption %></p>
+						</div>  
+					</div>
+				</div>
+			</div>
+		<% elsif s.media_type == "video" %>
+			<div class='wrapper'>
+				<div style="margin: 15px; height: 570px; width: 570px; background-color: black;">
+					<div style="z-index: 999; position: absolute; width: 570px; background-color: transparent;">
+						<div class="remove-option" style="z-index: 999; float:right; padding: 10px;">
+							<%= form_for s, url: {action: "remove"}, method: "post" do |f| %>
+							  <%= f.hidden_field :id, value: s.id %>
+							  <%= f.submit "Remove", :class => "btn btn-danger" %>
+							<% end %>
+						</div>
+					</div>
+					<video class="video" autoplay="true" loop="true" style="max-width: 570px; max-height: 570px; position: absolute; margin: auto; top: 0; left: 0; bottom: 0; right: 0;">
+					    <source id=<%= s.media_id %> src=<%= s.media_url %> type="video/mp4">
+					    Your browser does not support the video tag or the file format of this video.
+					</video>
+					<div class='description' style="margin: 15px; width: 570px; border-radius: 0;">
+						<div class="description_content">  
+						    <p class="customfont caption" style="margin-bottom: 0px;"><strong>@<%= s.media_author %></strong></p>
+							<p class="caption" style="font-family: Helvetica; font-weight: 200; line-height: 1.5; margin-top: 5px;"><%= s.caption %></p>
+						</div>  
+					</div>
+				</div>
+			</div>
+		<% elsif s.media_type == "tweet" %>
+			<div class='wrapper'>
+				<div style="margin: 15px; height: 570px; width: 570px; background-color: whitesmoke;">
+					<div style="z-index: 999; position: absolute; width: 570px; background-color: transparent;">
+						<div class="remove-option" style="z-index: 999; float:right; padding: 10px;">
+							<%= form_for s, url: {action: "remove"}, method: "post" do |f| %>
+							  <%= f.hidden_field :id, value: s.id %>
+							  <%= f.submit "Remove", :class => "btn btn-danger" %>
+							<% end %>
+						</div>
+					</div>
+					<div style="padding: 15px; background-color: whitesmoke;">
+						<p class="customfont" style="font-size: 38px; margin-bottom: 0px;">@<%= s.media_author %></p>
+						<p style="font-family: Helvetica; font-size: 26px; font-weight: 200; line-height: 1.5; margin-top: 10px;"><%= s.caption %></p>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+<% end %>
+		

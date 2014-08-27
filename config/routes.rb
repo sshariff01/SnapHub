@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'twitter/search_tag'
   get 'snaps/get_new'
 
+  get 'snaps/admin'
+  post 'snaps/remove'
   
 
   # The priority is based upon order of creation: first created -> highest priority.

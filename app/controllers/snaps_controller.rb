@@ -6,11 +6,6 @@ class SnapsController < ApplicationController
   end
   
   def view
-    # @subscriptions = Instagram.subscriptions
-    # if defined? session[:access_token]
-      # @access_token = session[:access_token]
-    # end
-    
     @snaps = Snap.all
   end
   
@@ -29,6 +24,15 @@ class SnapsController < ApplicationController
     respond_to do |format|
       format.js
     end
+  end
+  
+  def admin
+    @snaps = Snap.all
+  end
+  
+  def remove
+    
+    render :text => params["snap"]["id"]
   end
   
 end
