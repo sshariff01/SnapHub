@@ -1,8 +1,5 @@
 class SnapsController < ApplicationController
-  def index
-    if defined? session[:access_token]
-      @access_token = session[:access_token]
-    end
+  def subscriptions
   end
   
   def view

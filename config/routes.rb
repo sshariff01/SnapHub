@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'snaps/index'
+  get 'snaps/subscriptions'
   get 'snaps/view'
   
   get 'instagram/subscribe'

@@ -1,7 +1,7 @@
 class TwitterController < ApplicationController
   require 'uri'
   
-  HASHTAG = "Ameen2014"
+  HASHTAG = "#Ameen2014"
   
   def search_tag
     require "twitter"
