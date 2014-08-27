@@ -31,8 +31,12 @@ class SnapsController < ApplicationController
   end
   
   def remove
+    if Snap.delete(params["snap"]["id"])
+        redirect_to "/snaps/admin"
+    else
+      render :text => "Snap could not be removed! Please return to '/snaps/admin' and try removing again or contact your administrator if this issue persists."  
+    end
     
-    render :text => params["snap"]["id"]
   end
   
 end
