@@ -1,6 +1,8 @@
 class TwitterController < ApplicationController
   require 'uri'
   
+  HASHTAG = "Ameen2014"
+  
   def search_tag
     require "twitter"
   
@@ -13,7 +15,7 @@ class TwitterController < ApplicationController
       config.access_token_secret = 'KdcTYayXEh4zGn6oNNdEvvWtjaM623clrRI07eePQZD8L'
     end
     
-    client_rest.search("#testphotographytag2014", :result_type => "recent").collect do |object|
+    client_rest.search(HASHTAG, :result_type => "recent").collect do |object|
       logger.info object.inspect
       if not Snap.exists?(:media_id => object.id)
         if object.media?
