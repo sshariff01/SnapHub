@@ -10,7 +10,7 @@
 <script>
 	window.setInterval(function(){
 		location.reload();
-	}, <%= @snaps.count * 10000 %>)
+	}, <%= 60000 %>)
 </script>
 
 <% if not @snaps.empty? %>
